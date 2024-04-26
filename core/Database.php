@@ -9,7 +9,7 @@ class Database
     private $pdoObject;
 
     public function __construct() {
-        $config = require_once('../config/database.php');
+        $config = require_once('./config/config.php');
         $this->host = $config['host'];
         $this->username = $config['username'];
         $this->database = $config['database'];
@@ -25,16 +25,6 @@ class Database
             return $this->pdoObject;
         } catch(PDOException $error) {
             die("Error de conexion: " . $error->getMessage());
-        }
-    }
-
-    public function ejecutarSQL($consulta, $parametros = []) {
-        try {
-            $statement = $this->pdoObject->prepare($consulta);
-            $statement->execute($parametros);
-            return $statement;
-        } catch (PDOException $error) {
-            die("Error al ejecutar la consulta: " . $error->getMessage());
         }
     }
 }

@@ -3,7 +3,7 @@ return [
     'host' => 'localhost',
     'username' => 'root',
     'password' => '',
-    'database' => 'dbExample',
+    'database' => 'dbexample',
     'charset' => 'utf8mb4'
 ];
 

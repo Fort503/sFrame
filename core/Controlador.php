@@ -4,6 +4,6 @@ class Controlador
 {
     protected function mostrarVista($view, $data = [])
     {
-        require_once '../views' . $view . '.php';
+        require_once './views/' . $view . '.php';
     }
 }
